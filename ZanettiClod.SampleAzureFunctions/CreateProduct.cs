@@ -12,7 +12,7 @@ namespace ZanettiClod.SampleAzureFunctions
 {
     public class CreateProduct
     {
-        private static IProductService _productService;
+        private readonly IProductService _productService;
 
         public CreateProduct(IProductService productService)
         {
@@ -20,7 +20,7 @@ namespace ZanettiClod.SampleAzureFunctions
         }
 
         [Function("CreateProduct")]
-        public static async Task<HttpResponseData> Run(
+        public async Task<HttpResponseData> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequestData req,
             FunctionContext executionContext)
         {

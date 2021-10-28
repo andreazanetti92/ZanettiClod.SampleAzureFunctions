@@ -13,7 +13,7 @@ namespace ZanettiClod.SampleAzureFunctions
 {
     public class GetProducts
     {
-        private IProductService _productService;
+        private readonly IProductService _productService;
 
         public GetProducts(IProductService productService)
         {
